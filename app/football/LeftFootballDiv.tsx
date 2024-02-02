@@ -3,12 +3,13 @@ import Image from "next/image";
 import logo from '../../public/logo.png'
 import LeagueCard from "./LeagueCard";
 import Gameweek from "./Gameweek";
+
 export default function LeftFootballDiv() {
     return (
         <div className='lg:w-[22%] lg:ml-4 lg:mt-10 mb-4 2xl:my-12'>
-    
+
             <div className='w-full flex justify-between gap-2 2xl:gap-4 border border-primary rounded-md 2xl:rounded-lg p-3.5 2xl:p-4'>
-                <p className="text-primary text-lg font-medium">Next Gameweek: <Gameweek /></p>
+                <div className="text-primary text-lg font-medium">Next Gameweek: <Gameweek /></div>
             </div>
             {/* this is premier league div  */}
             <div className='my-6 2xl:my-10 space-y-2'>

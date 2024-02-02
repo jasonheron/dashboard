@@ -5,6 +5,7 @@ import swapImage from '../../public/swap-image.png';
 import { Progress } from "@/components/ui/progress";
 import { MdWidgets } from "react-icons/md";
 import HolderLeaders from "./HolderLeaders";
+import Leaderboard from "./Leaderboard";
 
 
 export default function RightFootballDiv() {
@@ -24,7 +25,20 @@ export default function RightFootballDiv() {
                     <div className='flex items-center gap-1'>
                         <Image src={logo} alt="england" width={24} height={24} />
                         <div className=''>
-                            <h4 className="">Leaderboards</h4>
+                            <h4 className="">$ASD Leadersboard</h4>
+                            <p className="text-xs text-white/50">The Premier Collection - AllSportsDAO</p>
+                        </div>
+                    </div>
+                </div>
+                <Leaderboard />
+            </div>
+
+            <div className='space-y-2'>
+                <div className='flex items-center justify-between'>
+                    <div className='flex items-center gap-1'>
+                        <Image src={logo} alt="england" width={24} height={24} />
+                        <div className=''>
+                            <h4 className="">Top Holders</h4>
                             <p className="text-xs text-white/50">The Premier Collection - AllSportsDAO</p>
                         </div>
                     </div>

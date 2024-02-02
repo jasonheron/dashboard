@@ -1,4 +1,4 @@
-// src/App.js
+'use client'
 
 import React from 'react';
 import DateDisplay from './DateDisplay';

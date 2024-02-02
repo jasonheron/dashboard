@@ -1,9 +1,9 @@
-// src/DateDisplay.tsx
+'use client'
 
 import React from 'react';
 
 interface DateDisplayProps {
-  dates: string[]; // Define the type of the 'dates' prop
+  dates: string[];
 }
 
 const DateDisplay: React.FC<DateDisplayProps> = ({ dates }) => {

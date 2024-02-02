@@ -5,7 +5,7 @@ import RightFootballDiv from './RightFootballDiv';
 export default function Football() {
     return (
         <>
-            <div className='hidden lg:flex flex-col lg:flex-row gap-4 2xl:gap-8 mx-2 lg:mx-0'>
+            <div className='hidden lg:flex flex-col lg:flex-row gap-4 2xl:gap-8 mx-2 pb-12 lg:mx-0'>
                 {/* this is left div for Matches  */}
                 <LeftFootballDiv />
                 {/* this is main div for showing content */}
@@ -14,7 +14,7 @@ export default function Football() {
                 <RightFootballDiv />
             </div>
 
-            <div className='flex lg:hidden flex-col lg:flex-row gap-4 2xl:gap-8 mx-2 lg:mx-0'>
+            <div className='flex lg:hidden flex-col lg:flex-row gap-4 mx-2 pb-24'>
                 {/* this is main div for showing content */}
                 <MiddleFootballDiv />
                 {/* this is left div for Matches  */}

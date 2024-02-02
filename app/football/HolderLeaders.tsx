@@ -36,7 +36,7 @@ export default async function HolderLeaders() {
                 </div>
             </div>
 
-            {data.slice(0, 20).map((topHolders: THolders) => (
+            {data.slice(0, 10).map((topHolders: THolders) => (
                 <div key={topHolders.owner.substring(0, 7)} className='flex items-center font-light'>
                     <div className='w-1/2 flex items-center gap-1'>
                         <p>{topHolders.owner.substring(0, 7)}...</p>
