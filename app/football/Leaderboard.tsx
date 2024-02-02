@@ -77,7 +77,7 @@ export default async function Leaderboard() {
                     </a>
                 </div>
                 <div className='w-1/2 grid justify-items-center grid-cols-2'>
-                    <p>1010</p>
+                    <p>1235</p>
                 </div>
             </div>
             <div className='flex items-center font-light'>
