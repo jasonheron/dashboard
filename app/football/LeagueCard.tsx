@@ -1,21 +1,32 @@
 import Image from "next/image"
 
-interface TMatch {
-    team: string;
-    played: number;
-    win: number;
-    draw: number;
-    loss: number;
-    goalsFor: number;
-    goalsAgainst: number;
+interface TeamInfo {
+    id: number;
+    name: string;
+    logo: string;
+  }
+  
+  interface MatchDetails {
+    rank: number;
+    team: TeamInfo;
     points: number;
-}
+    all: {
+      played: number;
+      win: number;
+      draw: number;
+      lose: number;
+      goals: {
+        for: number;
+        against: number;
+      };
+    };
+  }
 
 export async function getLeagueTable() {
-    const res = await fetch('https://heisenbug-premier-league-live-scores-v1.p.rapidapi.com/api/premierleague/table', {
+    const res = await fetch('https://api-football-v1.p.rapidapi.com/v3/standings?season=2023&league=39', {
         headers: {
             'X-RapidAPI-Key': '19978d8ad8msh966959f511c0cedp1fbbacjsnd4ed69eb1e78',
-            'X-RapidAPI-Host': 'heisenbug-premier-league-live-scores-v1.p.rapidapi.com'
+            'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
         }
     })
 
@@ -47,20 +58,20 @@ export default async function LeagueCard() {
             </div>
 
             {/* this is another divs  */}
-            {data?.records?.slice(0, 20).map((match: TMatch) => (
-                <div key={match.team} className='flex items-center font-light'>
-                    <div className='w-1/2 flex items-center gap-1'>
-                        <p>{match.team}</p>
-                    </div>
-
-                    <div className='w-1/2 grid justify-items-center grid-cols-5'>
-                        <p>{match.played}</p>
-                        <p>{match.win}</p>
-                        <p>{match.draw}</p>
-                        <p>{match.loss}</p>
-                        <p>{match.points}</p>
-                    </div>
+            {data.response[0].league.standings[0]?.slice(0, 20).map((match: MatchDetails) => (
+            <div key={match.team.id} className='flex items-center font-light'>
+                <div className='w-1/2 flex items-center gap-1'>
+                <p>{match.team.name}</p> {/* Corrected from match.name to match.team.name */}
                 </div>
+
+                <div className='w-1/2 grid justify-items-center grid-cols-6'>
+                <p>{match.all.played}</p>
+                <p>{match.all.win}</p>
+                <p>{match.all.draw}</p>
+                <p>{match.all.lose}</p>
+                <p>{match.points}</p>
+                </div>
+            </div>
             ))}
         </div>
     )

@@ -18,20 +18,22 @@ async function getLeagueFixers() {
   const res = await fetch(
     "https://api-football-v1.p.rapidapi.com/v3/fixtures?league=39&season=2023&next=10",
     {
+      method: 'GET', // Specify the method
       headers: {
         "X-RapidAPI-Key": "19978d8ad8msh966959f511c0cedp1fbbacjsnd4ed69eb1e78",
         "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com",
       },
+      cache: 'no-cache', // Add no-cache directive here
     }
   );
 
   if (!res.ok) {
-    // throw new Error('Failed to fetch data')
     console.log("res", res);
   }
 
   return res.json();
 }
+
 
 export default async function MiddleFootballDiv() {
   const { response } = await getLeagueFixers();
